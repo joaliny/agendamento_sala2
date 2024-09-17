@@ -1,0 +1,17 @@
+<h1>Nova Reserva</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="sala_id">Sala:</label>
+    <select name="sala_id">
+        {% for sala in salas %}
+            <option value="{{ sala.id }}">{{ sala.nome }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="data_reserva">Data da Reserva:</label>
+    <input type="datetime-local" name="data_reserva">
+
+    <button type="submit">Reservar</button>
+</form>
+
+<a href="{% url 'lista_reservas' %}">Voltar para lista de reservas</a>

@@ -1,0 +1,7 @@
+<h1>Lista de Reservas</h1>
+<ul>
+    {% for reserva in reservas %}
+        <li>{{ reserva.sala.nome }} - {{ reserva.data_reserva }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'nova_reserva' %}">Nova Reserva</a>
